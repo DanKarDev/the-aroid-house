@@ -22,17 +22,13 @@ function checkout() {
 
   const [paymentItem, setPaymentItem] = useContext(PaymentContext);
 
-  //const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
+  const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [address, setAddress] = useState("");
   const [phone, setPhone] = useState("");
 
-  const updateFirstName = (firstName) => {
-    setFirstName(firstName);
-  };
-  const updateLastName = (lastName) => {
-    setLastName(lastName);
+  const updateFullName = (fullName) => {
+    setFullName(fullName);
   };
   const updateEmail = (email) => {
     setEmail(email);
@@ -45,10 +41,10 @@ function checkout() {
   };
 
   const addPaymentItem = (e) => {
-    if (lastName === "") {
+    if (fullName === "") {
       toast({
-        title: "Last name empty",
-        description: "Please fill in your last name",
+        title: "Name empty",
+        description: "Please fill in your name",
         status: "warning",
         duration: 2500,
         isClosable: true,
@@ -95,7 +91,7 @@ function checkout() {
       } else {
         setPaymentItem((prevItems) => [
           ...prevItems,
-          { lastName, email, address, phone },
+          { fullName, email, address, phone },
         ]);
       }
     } else {
@@ -154,12 +150,11 @@ function checkout() {
                   setTabIndex={setTabIndex}
                   paymentItem={paymentItem}
                   addPaymentItem={addPaymentItem}
-                  lastName={lastName}
+                  fullName={fullName}
                   email={email}
                   address={address}
                   phone={phone}
-                  updateFirstName={updateFirstName}
-                  updateLastName={updateLastName}
+                  updateFullName={updateFullName}
                   updateEmail={updateEmail}
                   updateAddress={updateAddress}
                   updatePhone={updatePhone}

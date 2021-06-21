@@ -25,8 +25,8 @@ const Details = (props) => {
         <Input
           backgroundColor="background"
           placeholder="name"
-          value={props.LastName}
-          onChange={(e) => props.updateLastName(e.target.value)}
+          value={props.fullName}
+          onChange={(e) => props.updateFullName(e.target.value)}
           color="text"
         />
       </FormControl>

@@ -15,7 +15,7 @@ module.exports = async (request: NextApiRequest, response: NextApiResponse) => {
     subject: "TheAroidHouse Invoice",
     templateId: process.env.SENDGRID_TEMPLATE,
     dynamicTemplateData: {
-      customerName: orderAggregate.customer.lastName,
+      customerName: orderAggregate.customer.fullName,
       cartItems: orderAggregate.cart.cartItems,
       orderTotal: orderAggregate.orderTotalAmount,
       isSelfCollect: orderAggregate.isSelfCollect ? 0 : 10,
@@ -29,7 +29,7 @@ module.exports = async (request: NextApiRequest, response: NextApiResponse) => {
     subject: "TheAroidHouse New Order",
     templateId: process.env.SENDGRID_TEMPLATE,
     dynamicTemplateData: {
-      customerName: orderAggregate.customer.lastName + " made new order",
+      customerName: orderAggregate.customer.fullName + " made new order",
       cartItems: orderAggregate.cart.cartItems,
       orderTotal: orderAggregate.orderTotalAmount,
       isSelfCollect: orderAggregate.isSelfCollect ? 0 : 10,

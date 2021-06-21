@@ -107,9 +107,7 @@ const OrderItem: FC<Props> = ({ order, mutate }) => {
         </HStack>
         <HStack>
           <Icon as={FaUserAlt} />
-          <Text>
-            {order.customer.firstName} {order.customer.lastName}
-          </Text>
+          <Text>{order.customer.fullName}</Text>
         </HStack>
         <HStack>
           <Icon as={FaPhoneAlt} />

@@ -1,24 +1,21 @@
 import { Entity, BaseDomainEntity, Result, UniqueEntityID } from "types-ddd";
 
 interface CustomerProps extends BaseDomainEntity {
-  firstName: string;
-  lastName: string;
+  fullName: string;
   phoneNumber: number;
   email: string;
   address: string;
 }
 
 export class Customer extends Entity<CustomerProps> {
-  public firstName: string;
-  public lastName: string;
+  public fullName: string;
   public phoneNumber: number;
   public email: string;
   public address: string;
 
   private constructor(props: CustomerProps, id?: UniqueEntityID) {
     super(props, id);
-    this.firstName = props.firstName;
-    this.lastName = props.lastName;
+    this.fullName = props.fullName;
     this.phoneNumber = props.phoneNumber;
     this.email = props.email;
     this.address = props.address;
@@ -29,8 +26,7 @@ export class Customer extends Entity<CustomerProps> {
     id?: UniqueEntityID
   ): Result<Customer> {
     if (
-      !props.firstName &&
-      !props.lastName &&
+      !props.fullName &&
       !props.phoneNumber &&
       !props.email &&
       !props.address

@@ -30,16 +30,14 @@ const Payment = (props) => {
   const router = useRouter();
   const handleOrderSubmit = async () => {
     setLoading(true);
-    const firstName = paymentItem[1].firstName;
-    const lastName = paymentItem[1].lastName;
+    const fullName = paymentItem[1].fullName;
     const phoneNumber = paymentItem[1].phone;
     const email = paymentItem[1].email;
     const address = paymentItem[1].address;
     const isSelfCollect = paymentItem[0].deliveryCost == 0;
 
     const customer = Customer.create({
-      firstName,
-      lastName,
+      fullName,
       phoneNumber,
       email,
       address,
@@ -88,7 +86,7 @@ const Payment = (props) => {
   };
 
   if (paymentItem.length == 2) {
-    name = paymentItem[1].lastName;
+    name = paymentItem[1].fullName;
     email = paymentItem[1].email;
     address = paymentItem[1].address;
     number = paymentItem[1].phone;
