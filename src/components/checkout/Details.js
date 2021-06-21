@@ -24,7 +24,7 @@ const Details = (props) => {
         <FormLabel>Full name</FormLabel>
         <Input
           backgroundColor="background"
-          placeholder="name"
+          placeholder="Tan Ah Kow"
           value={props.fullName}
           onChange={(e) => props.updateFullName(e.target.value)}
           color="text"
@@ -34,7 +34,7 @@ const Details = (props) => {
         <FormLabel>Email Address</FormLabel>
         <Input
           backgroundColor="background"
-          placeholder="Email"
+          placeholder="ah_kow_tan@domain.com"
           value={props.email}
           onChange={(e) => props.updateEmail(e.target.value)}
           color="text"
@@ -44,14 +44,14 @@ const Details = (props) => {
         <FormLabel>Address</FormLabel>
         <Input
           backgroundColor="background"
-          placeholder="Address"
+          placeholder="Ah Kow's address"
           value={props.address}
           onChange={(e) => props.updateAddress(e.target.value)}
           color="text"
         />
       </FormControl>
       <FormControl marginTop="2" id="phone" isRequired>
-        <FormLabel>Phone Number (91234567)</FormLabel>
+        <FormLabel>Phone Number</FormLabel>
         <Input
           backgroundColor="background"
           placeholder="91234567"
